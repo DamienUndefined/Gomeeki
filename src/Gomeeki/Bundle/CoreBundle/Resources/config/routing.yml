@@ -1,0 +1,19 @@
+gomeeki_core_homepage:
+    path:     /
+    defaults: { _controller: GomeekiCoreBundle:Core:index }
+
+gomeeki_core_history:
+    path:     /history
+    defaults: { _controller: GomeekiCoreBundle:History:index }
+
+gomeeki_core_history_partial:
+    path:     /history/partial
+    defaults: { _controller: GomeekiCoreBundle:History:partialHistoryList }
+
+gomeeki_core_search:
+    path:     /search
+    defaults: { _controller: GomeekiCoreBundle:Search:index }
+
+gomeeki_core_search_location:
+    path:     /search/{locationName}
+    defaults: { _controller: GomeekiCoreBundle:Search:search }

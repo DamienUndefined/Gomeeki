@@ -1,0 +1,7 @@
+
+<h2>My History</h2>
+<ul>
+{% for history in historyList %}
+    <li><a href="{{ path('gomeeki_core_search_location', {'locationName': history.location.name}) }}">{{ history.location.name|capitalize }}</a></li>
+{% endfor %}
+</ul>

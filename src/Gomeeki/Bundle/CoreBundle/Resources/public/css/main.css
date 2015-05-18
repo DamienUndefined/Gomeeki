@@ -1,0 +1,15 @@
+html, body, .container, #map-canvas {
+    height: 100%;
+}
+
+.left-side {
+    height: 80%;
+}
+
+#map-container {
+    height: 80%;
+}
+
+.clear {
+    clear: both;
+}

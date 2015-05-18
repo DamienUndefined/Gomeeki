@@ -1,0 +1,13 @@
+services:
+    location_manager:
+        class: Gomeeki\Bundle\CoreBundle\Manager\LocationManager
+        arguments:
+            entityManager: "@doctrine.orm.entity_manager"
+    tweet_manager:
+        class: Gomeeki\Bundle\CoreBundle\Manager\TweetManager
+        arguments:
+            entityManager: "@doctrine.orm.entity_manager"
+    history_manager:
+            class: Gomeeki\Bundle\CoreBundle\Manager\HistoryManager
+            arguments:
+                entityManager: "@doctrine.orm.entity_manager"

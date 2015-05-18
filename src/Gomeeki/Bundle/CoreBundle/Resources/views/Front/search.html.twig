@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="col-sm-8 left-side">
+        {% if location is defined %}
+            <h2>Tweets in {{ location.getName()|capitalize }}:</h2>
+        {% endif %}
+        <div id="map-container">
+            <div id="map-canvas">Loading</div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="clear"></div>
+        <div id="formLocation" style="float: left;">
+            <input type="text" placeholder="Location name" name="inputLocation" id="inputLocation" />
+            <input type="button" id="submitLocation" value="Submit" class="btn btn-info">
+            <a href="{{ path('gomeeki_core_history') }}"><input type="button" value="History" class="btn btn-info"></a>
+        </div>
+        <br />
+        {% render(url('gomeeki_core_history_partial')) %}
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript">
+        {% if location is defined %}
+            var latitude = '{{ location.latitude }}';
+            var longitude = '{{ location.longitude }}';
+        {% endif %}
+
+        var searchUrl = '{{ path('gomeeki_core_search') }}';
+
+        {% if tweetList is defined %}
+            var tweetList = [
+                {% for tweet in tweetList %} [
+                    "{{ tweet.user.name }}",
+                    "{{ tweet.user.profile_image_url }}",
+                    "{{ tweet.text|raw|e('js') }} <br />When : {{ tweet.created_at }}",
+                    "{{ tweet.geo.coordinates[0] }}",
+                    "{{ tweet.geo.coordinates[1] }}"
+                ],
+                {% endfor %}
+            ];
+        {% endif %}
+    </script>
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script type="text/javascript" src="{{ asset('bundles/gomeekicore/js/main.js') }}"></script>
+{% endblock %}

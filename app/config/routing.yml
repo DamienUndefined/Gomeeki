@@ -1,0 +1,3 @@
+gomeeki_core:
+    resource: "@GomeekiCoreBundle/Resources/config/routing.yml"
+    prefix:   /

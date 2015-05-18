@@ -1,0 +1,6 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% render(url('gomeeki_core_history_partial')) %}
+    <a href="javascript:history.back()">Back to the Tweets !</a>
+{% endblock %}
