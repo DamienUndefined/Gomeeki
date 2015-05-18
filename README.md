@@ -1,7 +1,7 @@
 Gomeeki Mini Project
 =======
 
-The project is based on Symfony2.6 Framework
+The project is based on Symfony2.6 Framework.
 I could work with another framework such as CodeIgniter or Silex, lighter than Symfony but I'm more accustomed to Symfony development and the project will never be in production, so... :).
 
 For this project, I used Doctrine, with db generation from code (code first).
@@ -13,3 +13,4 @@ I also used 2 bundles (1 for TwitterAPI and the other one to get geocode datas f
 
 In a real project environment I should add logging, error handling and unit test.
 
+If you want to talk about my development, why, how or something else, do not hesitate to back to me, I'll be glad to talk about technic :).
