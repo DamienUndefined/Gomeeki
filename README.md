@@ -1,4 +1,4 @@
-Gomeeki Mini Project
+Mini Project
 =======
 
 The project is based on Symfony2.6 Framework.
